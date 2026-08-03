@@ -1,0 +1,17 @@
+.word-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+  position: sticky;
+  bottom: 0;
+}
+
+@media (max-width: 480px) {
+  .word-modal__actions {
+    flex-direction: column-reverse;
+  }
+  .word-modal__actions .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,178 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(14px) saturate(1.1);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  border-bottom: 1px solid var(--border);
+  transition: background var(--dur-base) var(--ease-soft), border-color var(--dur-base) var(--ease-soft);
+}
+
+.navbar__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar__left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.navbar__back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  transition: background var(--dur-fast) var(--ease-soft), color var(--dur-fast) var(--ease-soft);
+  flex-shrink: 0;
+}
+
+.navbar__back:hover {
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+
+.navbar__logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.2;
+}
+
+.navbar__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navbar__subtitle {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navbar__translator {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.navbar__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  transition: background var(--dur-fast) var(--ease-soft), color var(--dur-fast) var(--ease-soft);
+}
+
+.navbar__icon-btn:hover {
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+.navbar__menu-btn {
+  display: none;
+}
+
+.navbar__mobile-panel {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .navbar__translator {
+    display: none;
+  }
+  .navbar__menu-btn {
+    display: flex;
+  }
+  .navbar__mobile-panel {
+    display: block;
+    padding: 0 16px 14px;
+    animation: panel-in 220ms var(--ease);
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar__inner {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+  .navbar__actions {
+    gap: 4px;
+  }
+  .navbar__icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+  .navbar__title {
+    font-size: 0.9rem;
+    max-width: 38vw;
+  }
+}
+
+@media (max-width: 480px) {
+  /* At this width, brand text + all the action icons can no longer
+     coexist without forcing horizontal scroll — keep just the logo
+     mark, the back button, and the icon actions. */
+  .navbar__brand-text {
+    display: none;
+  }
+  .navbar__left {
+    gap: 8px;
+  }
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

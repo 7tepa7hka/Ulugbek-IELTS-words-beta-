@@ -1,0 +1,40 @@
+.word-list__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.word-list__title {
+  font-size: 1.7rem;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+
+.word-list__subtitle {
+  font-size: 0.88rem;
+  color: var(--text-tertiary);
+}
+
+.word-list__cta {
+  flex-shrink: 0;
+}
+
+.word-list__items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .word-list__header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .word-list__cta {
+    width: 100%;
+  }
+}

@@ -1,0 +1,133 @@
+.search-modal .modal-panel__body {
+  padding: 16px;
+}
+
+.search-modal__field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 13px 16px;
+}
+
+.search-modal__field:focus-within {
+  border-color: var(--text-primary);
+}
+
+.search-modal__icon {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+.search-modal__field input {
+  border: none;
+  background: none;
+  width: 100%;
+  font-size: 0.94rem;
+  color: var(--text-primary);
+}
+
+.search-modal__field input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.search-modal__hint {
+  font-size: 0.84rem;
+  color: var(--text-tertiary);
+  padding: 20px 10px 8px;
+  line-height: 1.5;
+}
+
+.search-modal__results {
+  margin-top: 14px;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.search-modal__count {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  padding: 4px 10px 10px;
+}
+
+.search-modal__empty {
+  font-size: 0.88rem;
+  color: var(--text-tertiary);
+  padding: 24px 10px;
+  text-align: center;
+}
+
+.search-modal__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: var(--radius-md);
+  text-align: left;
+  transition: background var(--dur-fast) var(--ease-soft);
+}
+
+.search-result:hover {
+  background: var(--surface);
+}
+
+.search-result__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.search-result__english {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+}
+
+.search-result__russian {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+}
+
+.search-result__extra {
+  font-size: 0.76rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 320px;
+}
+
+.search-result__category {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  background: var(--surface);
+  border-radius: var(--radius-full);
+  padding: 5px 10px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .search-result__extra {
+    display: none;
+  }
+}

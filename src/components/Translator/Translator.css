@@ -1,0 +1,124 @@
+.translator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 6px 8px 6px 14px;
+  min-width: 320px;
+  transition: border-color var(--dur-base) var(--ease-soft), background var(--dur-base) var(--ease-soft);
+}
+
+.translator:focus-within {
+  border-color: var(--border-strong);
+  background: var(--bg-elevated);
+}
+
+.translator__field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.translator__icon {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+.translator__field input {
+  border: none;
+  background: none;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  width: 108px;
+}
+
+.translator__field input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.translator__result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.translator__result--idle {
+  display: none;
+}
+
+.translator__arrow {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+.translator__text {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.translator__loading,
+.translator__error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.translator__error {
+  color: var(--danger);
+}
+
+.spin {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.translator__use {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--accent-contrast);
+  background: var(--accent);
+  padding: 6px 10px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity var(--dur-fast) var(--ease-soft), transform var(--dur-fast) var(--ease-soft);
+}
+
+.translator__use:hover {
+  opacity: 0.85;
+}
+
+.translator__use:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 900px) {
+  .translator {
+    min-width: 0;
+    width: 100%;
+  }
+  .translator__field input {
+    width: 100%;
+  }
+}

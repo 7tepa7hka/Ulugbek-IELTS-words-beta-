@@ -1,0 +1,133 @@
+.word-card {
+  position: relative;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  transition: border-color var(--dur-base) var(--ease-soft), box-shadow var(--dur-base) var(--ease-soft),
+    transform var(--dur-base) var(--ease-soft);
+  animation: word-in 340ms var(--ease) backwards;
+}
+
+.word-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.word-card__main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px 40px;
+  flex: 1;
+  min-width: 0;
+}
+
+.word-card__lang {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 130px;
+}
+
+.word-card__extra {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 180px;
+  flex: 1;
+}
+
+.word-card__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.word-card__english {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.word-card__russian {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.word-card__example,
+.word-card__note {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.word-card__note {
+  font-style: normal;
+}
+
+.word-card__actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.word-card__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  transition: background var(--dur-fast) var(--ease-soft), color var(--dur-fast) var(--ease-soft);
+}
+
+.word-card__btn:hover {
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+.word-card__btn--danger {
+  color: var(--danger);
+}
+
+.word-card__btn--danger:hover {
+  background: var(--danger-bg);
+  color: var(--danger-hover);
+}
+
+@keyframes word-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .word-card {
+    flex-direction: column;
+    padding: 18px;
+  }
+  .word-card__main {
+    gap: 14px;
+    width: 100%;
+  }
+  .word-card__actions {
+    align-self: flex-end;
+    margin-top: -6px;
+  }
+}
